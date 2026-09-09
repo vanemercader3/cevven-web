@@ -9,7 +9,7 @@ export default function Construccion() {
         <span className="construccion__icon">🚧</span>
         <h1 className="construccion__titulo">EN CONSTRUCCIÓN</h1>
         <p className="construccion__sub">Próximamente disponible</p>
-        <button className="construccion__btn" onClick={() => navigate('/')}>
+        <button className="construccion__btn" onClick={() => navigate(-1)}>
           ← Volver
         </button>
       </div>

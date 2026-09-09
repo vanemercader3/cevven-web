@@ -8,13 +8,7 @@ const BASE = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vT1tEq2qpgh_C4jddy
 const URL_MES      = `${BASE}&gid=799695537`;   // hoja "mes" (actividades puntuales del mes)
 const URL_HORARIOS = `${BASE}&gid=1373249144`;  // hoja "horarios"
 const URL_PRECIOS  = `${BASE}&gid=779743656`;   // hoja "precios"
-
-// Imágenes del hero (en public/fitness/home)
-const imagenes = [
-  { src: '/fitness/home/club.png',          position: 'center center' },
-  { src: '/fitness/home/gimnasio.png',      position: 'center center' },
-  { src: '/fitness/home/cama-elastica.png', position: 'center center' },
-];
+const URL_HERO     = `${BASE}&gid=1910595464`;  // hoja "home" (imágenes del carrusel)
 
 const ACENTOS = ['var(--blue)', 'var(--purple)', 'var(--orange)', 'var(--green)', 'var(--pink)'];
 
@@ -75,6 +69,7 @@ export default function FitnessHome() {
   const [mes, setMes] = useState([]);
   const [horarios, setHorarios] = useState([]);
   const [precios, setPrecios] = useState([]);
+  const [imagenes, setImagenes] = useState([]);
 
   // Si hoy es domingo, arranca en lunes
   const hoy = DIAS_JS[new Date().getDay()];
@@ -84,14 +79,21 @@ export default function FitnessHome() {
     traer(URL_MES).then(setMes);
     traer(URL_HORARIOS).then(setHorarios);
     traer(URL_PRECIOS).then(setPrecios);
+    traer(URL_HERO).then(filas =>
+      setImagenes(filas.map(f => ({
+        src: urlImagen(f.imagen),
+        position: 'center center',
+      })))
+    );
   }, []);
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      setActual(prev => (prev + 1) % imagenes.length);
-    }, 4000);
-    return () => clearInterval(timer);
-  }, []);
+  if (imagenes.length === 0) return;
+  const timer = setInterval(() => {
+    setActual(prev => (prev + 1) % imagenes.length);
+  }, 4000);
+  return () => clearInterval(timer);
+}, [imagenes.length]);
 
   // Agrupar las clases del día por hora
   const delDia = horarios.filter(h => norm(h.dia) === norm(diaSel));

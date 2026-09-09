@@ -74,15 +74,9 @@ function youtubeId(url) {
 
 // Convierte cualquier link de Google Drive en uno que se pueda mostrar como imagen
 function urlImagen(url) {
-  console.log('urlImagen recibe:', JSON.stringify(url))
   if (!url) return ''
   const m = url.match(/\/d\/([\w-]+)/) || url.match(/[?&]id=([\w-]+)/)
-  if (m) {
-    const final = `https://drive.google.com/thumbnail?id=${m[1]}&sz=w1000`
-    console.log('urlImagen devuelve:', final)
-    return final
-  }
-  console.log('urlImagen NO encontró ID, devuelve tal cual:', url)
+  if (m) return `https://drive.google.com/thumbnail?id=${m[1]}&sz=w1000`
   return url
 }
 

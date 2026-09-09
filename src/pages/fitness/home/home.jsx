@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { MapPin, User, CalendarDays, Check, CreditCard, Clock } from 'lucide-react';
-import NavbarFitness from '../../../components/navbarFitness/NavbarFitness';
+import NavbarFitness from '../../../components/navbarFitness/navbarFitness'
 import './home.css';
 
 // === CSV publicados (mismo documento, distinta pestaña vía gid) ===

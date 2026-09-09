@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { MapPin, Phone, Mail, Send, ArrowLeft } from 'lucide-react'
 import { Link } from 'react-router-dom'
-import NavbarFitness from '../../../components/navbarFitness/NavbarFitness'
+import NavbarFitness from '../../../components/navbarFitness/navbarFitness'
 import './contacto.css'
 
 // WhatsApp del club (formato internacional, sin + ni espacios)

@@ -1,4 +1,4 @@
-import NavbarFitness from '../../../components/navbarFitness/NavbarFitness'
+import NavbarFitness from '../../../components/navbarFitness/navbarFitness'
 import './placeholder.css'
 
 export default function FitnessPlaceholder({ titulo }) {

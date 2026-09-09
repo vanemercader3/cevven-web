@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Play, ArrowLeft, ChevronDown, Clock } from 'lucide-react'
 import { Link } from 'react-router-dom'
-import NavbarFitness from '../../../components/navbarFitness/NavbarFitness'
+import NavbarFitness from '../../../components/navbarFitness/navbarFitness'
 import './actividades.css'
 
 const BASE = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vT1tEq2qpgh_C4jddy8sz3cJbtzP5HijZsIHcIT9Xz2cP5mxy3JvQaOLQAs39WqJrlq6-gZF8XAC-XJ/pub?output=csv'

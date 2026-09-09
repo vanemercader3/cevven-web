@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { ArrowLeft, Send, Briefcase } from 'lucide-react'
 import { Link } from 'react-router-dom'
-import NavbarFitness from '../../../components/navbarFitness/NavbarFitness'
+import NavbarFitness from '../../../components/navbarFitness/navbarFitness'
 import './unite.css'
 
 const WHATSAPP = '59897328903'

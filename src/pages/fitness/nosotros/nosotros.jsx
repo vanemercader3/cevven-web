@@ -84,7 +84,7 @@ export default function Nosotros() {
       {/* TEXTO */}
       <section className="fit-sec nos-texto">
         {bloques.length === 0 ? (
-          <p className="fit-vacio">Cargá el contenido en la hoja "nosotros".</p>
+          <p className="fit-vacio">Cargando contenido.</p>
         ) : (
           bloques.map((b, i) => (
             <div key={i} className="nos-bloque">
